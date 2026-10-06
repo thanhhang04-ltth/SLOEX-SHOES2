@@ -4,133 +4,285 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SOLEX | 새로운 신발로 더 멋진 하루</title>
+<title>SOLEX — Luxury Footwear</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 
 <style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    font-family: Arial, "Noto Sans KR", sans-serif;
+    background:#f8f7f3;
     color:#111;
-    background:#fff;
+    font-family:"Noto Sans KR", sans-serif;
+    font-weight:400;
+}
+
+button,
+input,
+select{
+    font-family:inherit;
 }
 
 button{
-    font-family:inherit;
     cursor:pointer;
 }
 
 a{
-    text-decoration:none;
     color:inherit;
+    text-decoration:none;
 }
 
-/* ================= HEADER ================= */
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root{
+    --black:#111111;
+    --ivory:#f8f7f3;
+    --cream:#eeece6;
+    --gray:#777;
+    --line:#dedcd5;
+    --white:#ffffff;
+}
+
+
+/* =====================================================
+   TOP BAR
+===================================================== */
 
 .top-bar{
+    height:36px;
     background:#111;
-    color:white;
-    text-align:center;
-    padding:10px;
-    font-size:13px;
+    color:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:10px;
+    letter-spacing:1.8px;
 }
 
+
+/* =====================================================
+   HEADER
+===================================================== */
+
 .header{
-    height:80px;
-    border-bottom:1px solid #eee;
+    height:88px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
+
     padding:0 5%;
+
+    background:rgba(248,247,243,.96);
+
+    border-bottom:1px solid var(--line);
+
     position:sticky;
     top:0;
-    background:white;
+
     z-index:100;
 }
 
 .logo{
-    font-size:30px;
-    font-weight:900;
-    letter-spacing:-2px;
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:42px;
+    font-weight:600;
+
+    letter-spacing:4px;
+
+    line-height:1;
 }
 
 .nav{
     display:flex;
-    gap:35px;
-    font-size:15px;
-    font-weight:600;
+    align-items:center;
+
+    gap:38px;
+
+    font-size:11px;
+    letter-spacing:1.5px;
 }
 
-.nav a:hover{
-    color:#777;
+.nav a{
+    position:relative;
+    padding:8px 0;
 }
+
+.nav a::after{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:0;
+    height:1px;
+
+    background:#111;
+
+    transition:.3s;
+}
+
+.nav a:hover::after{
+    width:100%;
+}
+
 
 .header-icons{
     display:flex;
-    gap:12px;
+    align-items:center;
+    gap:15px;
 }
 
 .icon-btn{
     border:0;
-    background:white;
-    font-size:21px;
+    background:transparent;
+
+    font-size:18px;
+
+    width:32px;
+    height:32px;
+
     position:relative;
+}
+
+.icon-btn:hover{
+    opacity:.55;
 }
 
 .cart-count{
     position:absolute;
-    top:-7px;
-    right:-7px;
+
+    top:-3px;
+    right:-3px;
+
+    width:15px;
+    height:15px;
+
     background:#111;
-    color:white;
-    width:17px;
-    height:17px;
+    color:#fff;
+
     border-radius:50%;
-    font-size:10px;
+
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
+
+    font-size:8px;
 }
 
-/* ================= HERO ================= */
+
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
-    min-height:650px;
-    background:#f3f3f3;
+    min-height:760px;
+
+    padding:80px 8%;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:70px 8%;
+
+    position:relative;
+
     overflow:hidden;
+
+    background:#f4f2ec;
+}
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+
+    width:600px;
+    height:600px;
+
+    right:4%;
+    top:8%;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    filter:blur(90px);
+
+    opacity:.7;
 }
 
 .hero-text{
-    width:48%;
+    width:50%;
+
+    position:relative;
+    z-index:2;
 }
 
 .hero-small{
-    font-size:13px;
-    letter-spacing:3px;
-    font-weight:bold;
-    margin-bottom:20px;
+    font-size:10px;
+
+    letter-spacing:5px;
+
+    color:#777;
+
+    margin-bottom:30px;
 }
 
 .hero h1{
-    font-size:64px;
-    line-height:1.08;
-    letter-spacing:-4px;
-    margin-bottom:25px;
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:78px;
+
+    font-weight:400;
+
+    line-height:1.04;
+
+    letter-spacing:-2px;
+
+    margin-bottom:35px;
 }
 
-.hero p{
-    font-size:17px;
-    line-height:1.8;
-    color:#555;
-    margin-bottom:35px;
+.hero h1 em{
+    font-style:italic;
+}
+
+.hero-description{
+    max-width:460px;
+
+    font-size:13px;
+
+    line-height:2;
+
+    color:#707070;
+
+    margin-bottom:40px;
 }
 
 .hero-buttons{
@@ -138,57 +290,92 @@ a{
     gap:12px;
 }
 
-.btn-black{
+.btn-primary{
+    border:1px solid #111;
+
     background:#111;
-    color:white;
-    padding:16px 28px;
-    border:1px solid #111;
-    border-radius:3px;
-    font-weight:bold;
+    color:#fff;
+
+    padding:17px 30px;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    transition:.3s;
 }
 
-.btn-white{
-    background:white;
-    color:#111;
-    padding:16px 28px;
-    border:1px solid #111;
-    border-radius:3px;
-    font-weight:bold;
-}
-
-.btn-black:hover{
+.btn-primary:hover{
     background:#333;
+    transform:translateY(-2px);
 }
 
-.btn-white:hover{
-    background:#eee;
+.btn-secondary{
+    border:1px solid #aaa;
+
+    background:transparent;
+    color:#111;
+
+    padding:17px 30px;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    transition:.3s;
+}
+
+.btn-secondary:hover{
+    background:#111;
+    color:#fff;
+    border-color:#111;
 }
 
 .hero-image{
     width:48%;
+
     display:flex;
     justify-content:center;
+
+    position:relative;
+    z-index:2;
 }
 
 .hero-image img{
     width:100%;
-    max-width:560px;
+    max-width:620px;
+
     object-fit:contain;
+
     mix-blend-mode:multiply;
+
+    transition:.8s;
 }
 
-/* ================= BENEFITS ================= */
+.hero-image:hover img{
+    transform:scale(1.04) translateY(-8px);
+}
+
+
+/* =====================================================
+   BENEFITS
+===================================================== */
 
 .benefits{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    border-bottom:1px solid #eee;
+
+    background:#f8f7f3;
+
+    border-bottom:1px solid var(--line);
 }
 
 .benefit{
-    padding:28px;
+    padding:30px 20px;
+
     text-align:center;
-    border-right:1px solid #eee;
+
+    border-right:1px solid var(--line);
 }
 
 .benefit:last-child{
@@ -196,133 +383,240 @@ a{
 }
 
 .benefit-icon{
-    font-size:25px;
-    margin-bottom:8px;
+    font-size:18px;
+    margin-bottom:10px;
 }
 
 .benefit h3{
-    font-size:14px;
-    margin-bottom:5px;
+    font-size:11px;
+
+    letter-spacing:1px;
+
+    margin-bottom:6px;
 }
 
 .benefit p{
-    color:#777;
-    font-size:12px;
+    color:#888;
+
+    font-size:10px;
 }
 
-/* ================= SECTION ================= */
+
+/* =====================================================
+   GENERAL SECTION
+===================================================== */
 
 .section{
-    padding:90px 7%;
+    padding:110px 7%;
+}
+
+.section-header{
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+
+    margin-bottom:45px;
+}
+
+.eyebrow{
+    font-size:9px;
+
+    letter-spacing:4px;
+
+    color:#888;
+
+    margin-bottom:12px;
 }
 
 .section-title{
-    display:flex;
-    justify-content:space-between;
-    align-items:end;
-    margin-bottom:35px;
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:54px;
+
+    font-weight:400;
+
+    line-height:1;
 }
 
-.section-title h2{
-    font-size:38px;
-    letter-spacing:-2px;
-}
-
-.section-title p{
+.section-description{
     color:#777;
+
+    font-size:11px;
+
+    line-height:1.8;
+
+    max-width:280px;
 }
 
-/* ================= BRAND ================= */
+
+/* =====================================================
+   BRANDS
+===================================================== */
 
 .brands{
     display:grid;
     grid-template-columns:repeat(6,1fr);
-    border-top:1px solid #eee;
-    border-left:1px solid #eee;
+
+    border-top:1px solid var(--line);
+    border-left:1px solid var(--line);
 }
 
 .brand{
-    height:130px;
+    height:135px;
+
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:20px;
-    font-weight:900;
-    border-right:1px solid #eee;
-    border-bottom:1px solid #eee;
+
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+
+    font-family:Arial,sans-serif;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    transition:.35s;
+
     cursor:pointer;
-    transition:.25s;
 }
 
 .brand:hover{
     background:#111;
-    color:white;
+    color:#fff;
 }
 
-/* ================= CATEGORY ================= */
+
+/* =====================================================
+   CATEGORY
+===================================================== */
 
 .categories{
     display:grid;
+
     grid-template-columns:repeat(4,1fr);
-    gap:15px;
+
+    gap:14px;
 }
 
 .category{
-    height:240px;
-    background:#f4f4f4;
+    height:330px;
+
+    background:#eceae4;
+
     padding:25px;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
+
+    position:relative;
+
+    overflow:hidden;
+
     cursor:pointer;
-    transition:.3s;
+
+    transition:.4s;
 }
 
 .category:hover{
-    transform:translateY(-5px);
-    background:#e9e9e9;
+    background:#dfddd5;
+    transform:translateY(-6px);
+}
+
+.category-number{
+    font-size:9px;
+    letter-spacing:2px;
+    color:#777;
 }
 
 .category-icon{
-    font-size:75px;
-    text-align:center;
-    margin-top:25px;
+    position:absolute;
+
+    left:50%;
+    top:45%;
+
+    transform:translate(-50%,-50%);
+
+    font-size:105px;
+
+    transition:.5s;
+}
+
+.category:hover .category-icon{
+    transform:translate(-50%,-50%) scale(1.12);
+}
+
+.category-bottom{
+    position:absolute;
+
+    left:25px;
+    right:25px;
+    bottom:25px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:end;
 }
 
 .category-name{
-    font-size:20px;
-    font-weight:bold;
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:30px;
 }
 
-/* ================= FILTER ================= */
+.category-arrow{
+    font-size:20px;
+}
+
+
+/* =====================================================
+   FILTER
+===================================================== */
 
 .filters{
     display:flex;
     gap:8px;
+
     margin-bottom:30px;
+
     flex-wrap:wrap;
 }
 
-.filter-btn{
-    background:white;
-    border:1px solid #ddd;
+.filter{
+    background:transparent;
+
+    border:1px solid #d1cfc8;
+
     padding:10px 18px;
-    border-radius:30px;
+
+    font-size:10px;
+
+    letter-spacing:1px;
+
+    transition:.3s;
 }
 
-.filter-btn.active,
-.filter-btn:hover{
+.filter:hover,
+.filter.active{
     background:#111;
-    color:white;
+    color:#fff;
+
     border-color:#111;
 }
 
-/* ================= PRODUCTS ================= */
+
+/* =====================================================
+   PRODUCT GRID
+===================================================== */
 
 .products{
     display:grid;
+
     grid-template-columns:repeat(4,1fr);
-    gap:20px;
+
+    gap:22px;
 }
 
 .product{
@@ -330,255 +624,478 @@ a{
 }
 
 .product-image{
-    height:350px;
-    background:#f5f5f5;
+    height:390px;
+
+    background:#eeece7;
+
     position:relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+
     overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .product-image img{
     width:90%;
     height:90%;
+
     object-fit:contain;
+
     mix-blend-mode:multiply;
-    transition:.4s;
+
+    transition:.6s;
 }
 
 .product:hover .product-image img{
     transform:scale(1.08);
 }
 
-.tag{
+.product-tag{
     position:absolute;
-    top:15px;
-    left:15px;
-    background:#111;
-    color:white;
-    padding:6px 10px;
-    font-size:11px;
+
+    top:16px;
+    left:16px;
+
     z-index:2;
+
+    font-size:8px;
+
+    letter-spacing:1.5px;
+
+    background:#111;
+    color:#fff;
+
+    padding:6px 9px;
+}
+
+.product-wishlist{
+    position:absolute;
+
+    top:14px;
+    right:15px;
+
+    font-size:20px;
+
+    opacity:0;
+
+    transition:.3s;
+
+    z-index:3;
+}
+
+.product:hover .product-wishlist{
+    opacity:1;
 }
 
 .product-info{
-    padding-top:15px;
+    padding:17px 2px 0;
 }
 
 .product-brand{
-    font-size:12px;
-    color:#777;
+    color:#888;
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
     margin-bottom:6px;
 }
 
 .product-name{
-    font-weight:bold;
+    font-size:12px;
+
     margin-bottom:8px;
 }
 
-.price{
-    font-weight:bold;
+.product-price{
+    font-size:12px;
+
+    font-weight:600;
 }
 
-/* ================= PROMO ================= */
+
+/* =====================================================
+   PROMO
+===================================================== */
 
 .promo{
     display:grid;
+
     grid-template-columns:1fr 1fr;
-    gap:20px;
+
+    gap:15px;
 }
 
 .promo-card{
-    min-height:330px;
-    padding:45px;
+    min-height:430px;
+
+    padding:55px;
+
     background:#111;
-    color:white;
+
+    color:#fff;
+
     display:flex;
+
     flex-direction:column;
+
     justify-content:center;
 }
 
 .promo-card.light{
-    background:#eee;
+    background:#e9e7df;
     color:#111;
 }
 
+.promo-small{
+    font-size:9px;
+
+    letter-spacing:3px;
+
+    margin-bottom:25px;
+}
+
 .promo-card h2{
-    font-size:38px;
-    letter-spacing:-2px;
-    margin-bottom:15px;
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:62px;
+
+    font-weight:400;
+
+    line-height:.95;
+
+    margin-bottom:25px;
 }
 
 .promo-card p{
-    line-height:1.7;
+    max-width:350px;
+
     color:#aaa;
+
+    font-size:11px;
+
+    line-height:2;
 }
 
 .promo-card.light p{
     color:#666;
 }
 
-/* ================= NEWSLETTER ================= */
+
+/* =====================================================
+   NEWSLETTER
+===================================================== */
 
 .newsletter{
-    background:#f3f3f3;
-    padding:80px 20px;
+    padding:100px 20px;
+
     text-align:center;
+
+    border-top:1px solid var(--line);
+
+    border-bottom:1px solid var(--line);
+}
+
+.newsletter .eyebrow{
+    margin-bottom:20px;
 }
 
 .newsletter h2{
-    font-size:35px;
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:60px;
+
+    font-weight:400;
+
     margin-bottom:15px;
 }
 
 .newsletter p{
-    color:#666;
-    margin-bottom:25px;
+    color:#777;
+
+    font-size:11px;
+
+    margin-bottom:30px;
 }
 
 .email-box{
-    display:flex;
-    max-width:500px;
+    width:min(500px,90%);
+
     margin:auto;
+
+    display:flex;
+
+    border-bottom:1px solid #111;
 }
 
 .email-box input{
     flex:1;
-    padding:16px;
-    border:1px solid #ccc;
+
+    border:0;
+
+    outline:0;
+
+    background:transparent;
+
+    padding:15px 5px;
+
+    font-size:11px;
 }
 
 .email-box button{
-    background:#111;
-    color:white;
     border:0;
-    padding:0 25px;
+
+    background:transparent;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    padding:0 10px;
 }
 
-/* ================= FOOTER ================= */
+
+/* =====================================================
+   FOOTER
+===================================================== */
 
 .footer{
     background:#111;
-    color:white;
-    padding:60px 7%;
+
+    color:#fff;
+
+    padding:75px 7%;
 }
 
 .footer-grid{
     display:grid;
+
     grid-template-columns:2fr 1fr 1fr 1fr;
-    gap:40px;
+
+    gap:50px;
 }
 
-.footer h3{
+.footer-logo{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:42px;
+
+    letter-spacing:4px;
+
     margin-bottom:20px;
 }
 
-.footer p,
-.footer li{
-    color:#aaa;
-    font-size:13px;
+.footer-description{
+    max-width:300px;
+
+    color:#888;
+
+    font-size:10px;
+
     line-height:2;
+}
+
+.footer h3{
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    margin-bottom:20px;
 }
 
 .footer ul{
     list-style:none;
 }
 
-.copyright{
-    border-top:1px solid #333;
-    margin-top:50px;
-    padding-top:20px;
-    color:#777;
-    font-size:12px;
+.footer li{
+    color:#888;
+
+    font-size:10px;
+
+    line-height:2.4;
 }
 
-/* ================= MODAL ================= */
+.copyright{
+    border-top:1px solid #333;
+
+    margin-top:60px;
+
+    padding-top:20px;
+
+    color:#555;
+
+    font-size:9px;
+
+    letter-spacing:1px;
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
 
 .modal{
     display:none;
+
     position:fixed;
+
     inset:0;
-    background:rgba(0,0,0,.55);
+
+    background:rgba(0,0,0,.65);
+
     z-index:1000;
+
     align-items:center;
     justify-content:center;
+
+    padding:20px;
 }
 
 .modal-content{
-    background:white;
-    width:min(900px,92%);
+    width:min(900px,95%);
+
     max-height:90vh;
+
     overflow:auto;
-    padding:35px;
+
+    background:#f8f7f3;
+
+    padding:45px;
+
     position:relative;
 }
 
 .close{
     position:absolute;
+
     top:15px;
     right:20px;
-    font-size:28px;
+
     border:0;
-    background:none;
+
+    background:transparent;
+
+    font-size:28px;
+
+    font-weight:300;
 }
 
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
 .search-title{
-    font-size:30px;
-    margin-bottom:25px;
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:48px;
+
+    font-weight:400;
+
+    margin-bottom:30px;
 }
 
 .search-input{
     width:100%;
-    padding:17px;
-    border:1px solid #ccc;
-    margin-bottom:20px;
-    font-size:16px;
-}
 
-.select-row{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
+    background:transparent;
+
+    border:0;
+
+    border-bottom:1px solid #111;
+
+    outline:0;
+
+    padding:15px 0;
+
+    font-size:15px;
+
     margin-bottom:25px;
 }
 
-select{
-    padding:14px;
+.search-selects{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:12px;
+
+    margin-bottom:30px;
+}
+
+.search-selects select{
     border:1px solid #ccc;
+
+    background:#fff;
+
+    padding:13px;
+
+    outline:0;
+
+    font-size:11px;
 }
 
 .search-results{
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
+
     gap:15px;
 }
 
-.result{
-    background:#f5f5f5;
-    padding:15px;
+.search-result{
+    background:#eeece7;
+
+    padding:12px;
+
     cursor:pointer;
 }
 
-.result img{
+.search-result img{
     width:100%;
+
     height:180px;
+
     object-fit:contain;
+
     mix-blend-mode:multiply;
 }
 
-/* ================= DETAIL ================= */
+.search-result-name{
+    font-size:11px;
+
+    margin-top:10px;
+}
+
+.search-result-price{
+    font-size:10px;
+
+    margin-top:6px;
+    font-weight:bold;
+}
+
+
+/* =====================================================
+   PRODUCT DETAIL
+===================================================== */
 
 .detail{
     display:grid;
+
     grid-template-columns:1fr 1fr;
-    gap:35px;
+
+    gap:40px;
 }
 
 .detail-image{
-    background:#f5f5f5;
-    height:450px;
+    background:#eceae4;
+
+    height:500px;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
 }
@@ -586,66 +1103,130 @@ select{
 .detail-image img{
     width:90%;
     height:90%;
+
     object-fit:contain;
+
     mix-blend-mode:multiply;
 }
 
-.detail h2{
-    font-size:32px;
+.detail-info{
+    padding-top:20px;
+}
+
+.detail-brand{
+    color:#888;
+
+    font-size:9px;
+
+    letter-spacing:3px;
+}
+
+.detail-name{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:48px;
+
+    font-weight:400;
+
+    line-height:1;
+
     margin:15px 0;
 }
 
 .detail-price{
-    font-size:22px;
-    font-weight:bold;
-    margin:20px 0;
+    font-size:16px;
+
+    margin-bottom:25px;
+}
+
+.detail-description{
+    color:#777;
+
+    font-size:11px;
+
+    line-height:2;
+
+    margin-bottom:25px;
 }
 
 .size-title{
-    margin:20px 0 10px;
-    font-weight:bold;
+    font-size:10px;
+
+    letter-spacing:1px;
+
+    margin-bottom:10px;
 }
 
 .sizes{
     display:flex;
-    gap:8px;
+
+    gap:7px;
+
     flex-wrap:wrap;
 }
 
 .size{
     border:1px solid #ccc;
-    background:white;
-    padding:12px 18px;
+
+    background:#fff;
+
+    padding:11px 15px;
+
+    font-size:10px;
 }
 
 .size:hover,
 .size.selected{
     background:#111;
-    color:white;
+
+    color:#fff;
+
+    border-color:#111;
 }
 
 .add-cart{
-    margin-top:25px;
     width:100%;
+
+    margin-top:30px;
+
     padding:17px;
+
     background:#111;
-    color:white;
-    border:0;
-    font-weight:bold;
+
+    color:#fff;
+
+    border:1px solid #111;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    transition:.3s;
 }
 
-/* ================= RESPONSIVE ================= */
+.add-cart:hover{
+    background:#333;
+}
 
-@media(max-width:900px){
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1000px){
 
     .nav{
         display:none;
     }
 
     .hero{
+        min-height:auto;
+
         flex-direction:column;
+
         text-align:center;
-        padding:60px 5%;
+
+        padding:80px 7%;
     }
 
     .hero-text,
@@ -654,22 +1235,27 @@ select{
     }
 
     .hero h1{
-        font-size:45px;
+        font-size:65px;
+    }
+
+    .hero-description{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
     }
 
     .hero-image{
-        margin-top:40px;
+        margin-top:60px;
     }
 
-    .benefits{
+    .products{
         grid-template-columns:repeat(2,1fr);
     }
 
     .categories{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .products{
         grid-template-columns:repeat(2,1fr);
     }
 
@@ -682,28 +1268,92 @@ select{
     }
 }
 
+
 @media(max-width:600px){
 
-    .section{
-        padding:60px 5%;
+    .top-bar{
+        font-size:8px;
+    }
+
+    .header{
+        height:70px;
+    }
+
+    .logo{
+        font-size:32px;
+    }
+
+    .hero{
+        padding:65px 6%;
     }
 
     .hero h1{
-        font-size:38px;
+        font-size:47px;
+
+        letter-spacing:-1px;
     }
 
     .hero-buttons{
         flex-direction:column;
     }
 
-    .categories,
-    .products,
+    .benefits{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .benefit{
+        padding:20px 10px;
+    }
+
+    .section{
+        padding:75px 5%;
+    }
+
+    .section-title{
+        font-size:44px;
+    }
+
+    .section-header{
+        display:block;
+    }
+
+    .section-description{
+        margin-top:15px;
+    }
+
+    .brands{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .categories{
+        grid-template-columns:1fr;
+    }
+
+    .products{
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+    }
+
+    .product-image{
+        height:220px;
+    }
+
     .promo{
         grid-template-columns:1fr;
     }
 
-    .brands{
-        grid-template-columns:repeat(2,1fr);
+    .promo-card{
+        min-height:350px;
+
+        padding:35px;
+    }
+
+    .promo-card h2{
+        font-size:48px;
+    }
+
+    .newsletter h2{
+        font-size:45px;
     }
 
     .footer-grid{
@@ -718,47 +1368,97 @@ select{
         grid-template-columns:1fr;
     }
 
-    .select-row{
-        grid-template-columns:1fr;
+    .detail-image{
+        height:350px;
     }
+
+    .detail-name{
+        font-size:40px;
+    }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- TOP BAR -->
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
 <div class="top-bar">
-    신규 회원 가입 시 10% 할인 쿠폰 · 50,000원 이상 무료 배송
+    신규 회원 가입 시 10% 할인 · 50,000원 이상 무료 배송
 </div>
 
-<!-- HEADER -->
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
 <header class="header">
 
-    <div class="logo">SOLEX</div>
+    <a href="#" class="logo">
+        SOLEX
+    </a>
+
 
     <nav class="nav">
-        <a href="#new">신상품</a>
-        <a href="#products">남성</a>
-        <a href="#products">여성</a>
-        <a href="#categories">키즈</a>
-        <a href="#brands">브랜드</a>
-        <a href="#sale">세일</a>
+
+        <a href="#new">
+            NEW
+        </a>
+
+        <a href="#products">
+            MEN
+        </a>
+
+        <a href="#products">
+            WOMEN
+        </a>
+
+        <a href="#categories">
+            CATEGORIES
+        </a>
+
+        <a href="#brands">
+            BRANDS
+        </a>
+
+        <a href="#sale">
+            SALE
+        </a>
+
     </nav>
+
 
     <div class="header-icons">
 
-        <button class="icon-btn" onclick="openSearch()">
-            🔍
+        <button
+            class="icon-btn"
+            onclick="openSearch()">
+            ⌕
         </button>
 
-        <button class="icon-btn">
+        <button
+            class="icon-btn"
+            onclick="alert('위시리스트 기능입니다.')">
             ♡
         </button>
 
-        <button class="icon-btn">
-            🛒
-            <span class="cart-count" id="cartCount">0</span>
+        <button
+            class="icon-btn">
+
+            ♡
+
+            <span
+                class="cart-count"
+                id="cartCount">
+                0
+            </span>
+
         </button>
 
     </div>
@@ -766,122 +1466,215 @@ select{
 </header>
 
 
-<!-- HERO -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-<section class="hero">
+<section class="hero" id="new">
 
     <div class="hero-text">
 
         <div class="hero-small">
-            SOLEX NEW COLLECTION
+            SOLEX · NEW COLLECTION 2026
         </div>
 
+
         <h1>
-            새로운 신발로<br>
-            더 멋진 하루를<br>
-            시작하세요! 👟
+
+            새로운 신발로,<br>
+
+            <em>
+                더 아름다운 하루를.
+            </em>
+
         </h1>
 
-        <p>
-            당신의 스타일과 일상에 가장 잘 어울리는
-            새로운 스니커즈를 만나보세요.
-            편안함과 스타일을 동시에 경험할 수 있습니다.
+
+        <p class="hero-description">
+
+            당신의 모든 순간을 더욱 특별하게 만드는
+            SOLEX의 새로운 컬렉션을 만나보세요.
+            시간이 지나도 변하지 않는 스타일과
+            편안함을 담았습니다.
+
         </p>
+
 
         <div class="hero-buttons">
 
-            <button class="btn-black"
-                    onclick="openSearch()">
-                신발 검색하기 →
+            <button
+                class="btn-primary"
+                onclick="openSearch()">
+
+                COLLECTION 보기&nbsp; →
+
             </button>
 
-            <button class="btn-white"
-                    onclick="showAll()">
-                인기 상품 보기
+
+            <button
+                class="btn-secondary"
+                onclick="showAll()">
+
+                BEST SELLERS
+
             </button>
 
         </div>
 
     </div>
+
 
     <div class="hero-image">
 
         <img
-        src="https://stirlingsports.co.nz/cdn/shop/files/CW2288-111-2.jpg?v=1731548921&width=1320"
-        alt="Nike Air Force 1">
+            src="https://stirlingsports.co.nz/cdn/shop/files/CW2288-111-2.jpg?v=1731548921&width=1320"
+            alt="Luxury Sneaker">
 
     </div>
 
 </section>
 
 
-<!-- BENEFITS -->
+<!-- =====================================================
+     BENEFITS
+===================================================== -->
 
 <section class="benefits">
 
     <div class="benefit">
-        <div class="benefit-icon">🚚</div>
-        <h3>무료 배송</h3>
-        <p>5만원 이상 구매 시</p>
+
+        <div class="benefit-icon">
+            ◇
+        </div>
+
+        <h3>
+            FREE SHIPPING
+        </h3>
+
+        <p>
+            50,000원 이상 무료 배송
+        </p>
+
     </div>
 
-    <div class="benefit">
-        <div class="benefit-icon">↩️</div>
-        <h3>간편한 교환</h3>
-        <p>편리하고 빠른 교환</p>
-    </div>
 
     <div class="benefit">
-        <div class="benefit-icon">🔒</div>
-        <h3>안전한 결제</h3>
-        <p>안전한 결제 시스템</p>
+
+        <div class="benefit-icon">
+            ↺
+        </div>
+
+        <h3>
+            EASY RETURN
+        </h3>
+
+        <p>
+            간편한 교환 및 반품
+        </p>
+
     </div>
 
+
     <div class="benefit">
-        <div class="benefit-icon">💬</div>
-        <h3>고객 지원</h3>
-        <p>언제든지 문의하세요</p>
+
+        <div class="benefit-icon">
+            ♢
+        </div>
+
+        <h3>
+            SECURE PAYMENT
+        </h3>
+
+        <p>
+            안전한 결제 시스템
+        </p>
+
+    </div>
+
+
+    <div class="benefit">
+
+        <div class="benefit-icon">
+            ·
+        </div>
+
+        <h3>
+            CUSTOMER CARE
+        </h3>
+
+        <p>
+            언제든지 문의하세요
+        </p>
+
     </div>
 
 </section>
 
 
-<!-- BRANDS -->
+<!-- =====================================================
+     BRANDS
+===================================================== -->
 
 <section class="section" id="brands">
 
-    <div class="section-title">
+    <div class="section-header">
 
         <div>
-            <h2>인기 브랜드</h2>
-            <p>좋아하는 브랜드의 신상품을 만나보세요.</p>
+
+            <div class="eyebrow">
+                SELECTED BRANDS
+            </div>
+
+            <h2 class="section-title">
+                Brands
+            </h2>
+
         </div>
+
+
+        <p class="section-description">
+            세계적으로 사랑받는 브랜드와
+            SOLEX가 선택한 컬렉션을 만나보세요.
+        </p>
 
     </div>
 
+
     <div class="brands">
 
-        <div class="brand" onclick="brandFilter('Nike')">
+        <div
+            class="brand"
+            onclick="brandFilter('Nike')">
             NIKE
         </div>
 
-        <div class="brand" onclick="brandFilter('Adidas')">
+        <div
+            class="brand"
+            onclick="brandFilter('Adidas')">
             ADIDAS
         </div>
 
-        <div class="brand" onclick="brandFilter('Puma')">
+        <div
+            class="brand"
+            onclick="brandFilter('Puma')">
             PUMA
         </div>
 
-        <div class="brand" onclick="brandFilter('New Balance')">
+        <div
+            class="brand"
+            onclick="brandFilter('New Balance')">
             NEW BALANCE
         </div>
 
-        <div class="brand" onclick="brandFilter('Vans')">
+        <div
+            class="brand"
+            onclick="brandFilter('Vans')">
             VANS
         </div>
 
-        <div class="brand" onclick="brandFilter('Converse')">
+        <div
+            class="brand"
+            onclick="brandFilter('Converse')">
             CONVERSE
         </div>
 
@@ -890,57 +1683,140 @@ select{
 </section>
 
 
-<!-- CATEGORIES -->
+<!-- =====================================================
+     CATEGORIES
+===================================================== -->
 
 <section class="section" id="categories">
 
-    <div class="section-title">
+    <div class="section-header">
 
         <div>
-            <h2>카테고리</h2>
-            <p>원하는 스타일의 신발을 선택하세요.</p>
+
+            <div class="eyebrow">
+                SHOP BY STYLE
+            </div>
+
+            <h2 class="section-title">
+                Categories
+            </h2>
+
         </div>
+
+        <p class="section-description">
+            오늘의 스타일과 목적에 맞는
+            완벽한 한 켤레를 찾아보세요.
+        </p>
 
     </div>
 
+
     <div class="categories">
 
-        <div class="category"
-             onclick="categoryFilter('러닝')">
 
-            <div class="category-icon">🏃‍♂️</div>
-            <div class="category-name">
-                러닝
+        <div
+            class="category"
+            onclick="categoryFilter('러닝')">
+
+            <div class="category-number">
+                01 / RUNNING
+            </div>
+
+            <div class="category-icon">
+                🏃
+            </div>
+
+            <div class="category-bottom">
+
+                <div class="category-name">
+                    러닝
+                </div>
+
+                <div class="category-arrow">
+                    →
+                </div>
+
             </div>
 
         </div>
 
-        <div class="category"
-             onclick="categoryFilter('스니커즈')">
 
-            <div class="category-icon">👟</div>
-            <div class="category-name">
-                스니커즈
+        <div
+            class="category"
+            onclick="categoryFilter('스니커즈')">
+
+            <div class="category-number">
+                02 / SNEAKERS
+            </div>
+
+            <div class="category-icon">
+                👟
+            </div>
+
+            <div class="category-bottom">
+
+                <div class="category-name">
+                    스니커즈
+                </div>
+
+                <div class="category-arrow">
+                    →
+                </div>
+
             </div>
 
         </div>
 
-        <div class="category"
-             onclick="categoryFilter('농구')">
 
-            <div class="category-icon">🏀</div>
-            <div class="category-name">
-                농구화
+        <div
+            class="category"
+            onclick="categoryFilter('농구')">
+
+            <div class="category-number">
+                03 / BASKETBALL
+            </div>
+
+            <div class="category-icon">
+                🏀
+            </div>
+
+            <div class="category-bottom">
+
+                <div class="category-name">
+                    농구화
+                </div>
+
+                <div class="category-arrow">
+                    →
+                </div>
+
             </div>
 
         </div>
 
-        <div class="category"
-             onclick="categoryFilter('트레이닝')">
 
-            <div class="category-icon">🏋️</div>
-            <div class="category-name">
-                트레이닝
+        <div
+            class="category"
+            onclick="categoryFilter('트레이닝')">
+
+            <div class="category-number">
+                04 / TRAINING
+            </div>
+
+            <div class="category-icon">
+                ◉
+            </div>
+
+            <div class="category-bottom">
+
+                <div class="category-name">
+                    트레이닝
+                </div>
+
+                <div class="category-arrow">
+                    →
+                </div>
+
             </div>
 
         </div>
@@ -950,73 +1826,109 @@ select{
 </section>
 
 
-<!-- PRODUCTS -->
+<!-- =====================================================
+     PRODUCTS
+===================================================== -->
 
 <section class="section" id="products">
 
-    <div class="section-title">
+    <div class="section-header">
 
         <div>
-            <h2>베스트 상품</h2>
-            <p>SOLEX에서 가장 인기 있는 제품입니다.</p>
+
+            <div class="eyebrow">
+                SOLEX EDIT
+            </div>
+
+            <h2 class="section-title">
+                Best Sellers
+            </h2>
+
         </div>
+
+        <p class="section-description">
+            지금 가장 사랑받고 있는
+            SOLEX의 베스트 아이템입니다.
+        </p>
 
     </div>
 
 
     <div class="filters">
 
-        <button class="filter-btn active"
-                onclick="showAll(this)">
-            전체
+        <button
+            class="filter active"
+            onclick="showAll()">
+            ALL
         </button>
 
-        <button class="filter-btn"
-                onclick="categoryFilter('러닝',this)">
-            러닝
+        <button
+            class="filter"
+            onclick="categoryFilter('러닝')">
+            RUNNING
         </button>
 
-        <button class="filter-btn"
-                onclick="categoryFilter('스니커즈',this)">
-            스니커즈
+        <button
+            class="filter"
+            onclick="categoryFilter('스니커즈')">
+            SNEAKERS
         </button>
 
-        <button class="filter-btn"
-                onclick="categoryFilter('농구',this)">
-            농구
+        <button
+            class="filter"
+            onclick="categoryFilter('농구')">
+            BASKETBALL
         </button>
 
-        <button class="filter-btn"
-                onclick="categoryFilter('트레이닝',this)">
-            트레이닝
+        <button
+            class="filter"
+            onclick="categoryFilter('트레이닝')">
+            TRAINING
+        </button>
+
+        <button
+            class="filter"
+            onclick="categoryFilter('라이프스타일')">
+            LIFESTYLE
         </button>
 
     </div>
 
 
-    <div class="products" id="productGrid"></div>
+    <div
+        class="products"
+        id="productGrid">
+    </div>
 
 </section>
 
 
-<!-- PROMO -->
+<!-- =====================================================
+     PROMO
+===================================================== -->
 
 <section class="section">
 
     <div class="promo">
 
+
         <div class="promo-card">
 
+            <div class="promo-small">
+                THE SOLEX EDIT
+            </div>
+
             <h2>
+                OWN<br>
                 YOUR<br>
-                EVERYDAY<br>
-                STYLE
+                STYLE.
             </h2>
 
             <p>
-                매일 신어도 편안하고
-                어디에서나 스타일리시한
-                SOLEX 스니커즈.
+                매일의 순간을 위한
+                가장 세련된 한 켤레.
+                시간이 지나도 변하지 않는
+                당신만의 스타일을 완성하세요.
             </p>
 
         </div>
@@ -1024,15 +1936,21 @@ select{
 
         <div class="promo-card light">
 
+            <div class="promo-small">
+                NEW SEASON
+            </div>
+
             <h2>
-                지금<br>
-                새로운 스타일을<br>
-                시작하세요.
+                WALK<br>
+                INTO<br>
+                SOMETHING NEW.
             </h2>
 
             <p>
-                인기 상품은 빠르게 품절될 수 있습니다.
-                마음에 드는 신발을 지금 확인해보세요.
+                새로운 계절,
+                새로운 스타일.
+                SOLEX의 새로운 컬렉션으로
+                당신의 하루를 시작하세요.
             </p>
 
         </div>
@@ -1042,24 +1960,34 @@ select{
 </section>
 
 
-<!-- NEWSLETTER -->
+<!-- =====================================================
+     NEWSLETTER
+===================================================== -->
 
 <section class="newsletter">
 
-    <h2>SOLEX 소식 받기</h2>
+    <div class="eyebrow">
+        SOLEX JOURNAL
+    </div>
+
+    <h2>
+        Stay in Style.
+    </h2>
 
     <p>
-        신상품과 할인 정보를 가장 먼저 받아보세요.
+        신상품과 특별한 혜택을 가장 먼저 만나보세요.
     </p>
+
 
     <div class="email-box">
 
         <input
+            id="email"
             type="email"
             placeholder="이메일 주소를 입력하세요">
 
         <button onclick="subscribe()">
-            구독하기
+            SUBSCRIBE →
         </button>
 
     </div>
@@ -1067,119 +1995,198 @@ select{
 </section>
 
 
-<!-- FOOTER -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer class="footer">
 
     <div class="footer-grid">
 
-        <div>
-            <h3>SOLEX</h3>
 
-            <p>
-                새로운 신발로 더 멋진 하루를
-                시작할 수 있도록 도와드립니다.
+        <div>
+
+            <div class="footer-logo">
+                SOLEX
+            </div>
+
+            <p class="footer-description">
+                당신의 모든 걸음이 더욱 특별해질 수 있도록.
+                SOLEX는 스타일과 편안함을 위한
+                새로운 신발 문화를 제안합니다.
             </p>
+
         </div>
 
+
         <div>
-            <h3>쇼핑</h3>
+
+            <h3>
+                SHOP
+            </h3>
 
             <ul>
+
                 <li>신상품</li>
                 <li>남성</li>
                 <li>여성</li>
                 <li>키즈</li>
                 <li>세일</li>
+
             </ul>
 
         </div>
 
+
         <div>
 
-            <h3>고객센터</h3>
+            <h3>
+                SERVICE
+            </h3>
 
             <ul>
+
                 <li>배송 안내</li>
                 <li>교환 / 반품</li>
                 <li>주문 조회</li>
-                <li>자주 묻는 질문</li>
+                <li>FAQ</li>
+                <li>고객센터</li>
+
             </ul>
 
         </div>
 
+
         <div>
 
-            <h3>회사</h3>
+            <h3>
+                ABOUT
+            </h3>
 
             <ul>
-                <li>브랜드 소개</li>
+
+                <li>SOLEX 소개</li>
                 <li>매장 안내</li>
                 <li>채용</li>
                 <li>문의하기</li>
+
             </ul>
 
         </div>
 
     </div>
 
+
     <div class="copyright">
-        © 2026 SOLEX. All Rights Reserved.
+        © 2026 SOLEX. ALL RIGHTS RESERVED.
     </div>
 
 </footer>
 
 
-<!-- SEARCH MODAL -->
+<!-- =====================================================
+     SEARCH MODAL
+===================================================== -->
 
-<div class="modal" id="searchModal">
+<div
+    class="modal"
+    id="searchModal">
 
     <div class="modal-content">
 
-        <button class="close"
-                onclick="closeSearch()">
+        <button
+            class="close"
+            onclick="closeSearch()">
             ×
         </button>
 
-        <div class="search-title">
-            원하는 신발을 찾아보세요
+
+        <div class="eyebrow">
+            FIND YOUR PAIR
         </div>
+
+        <h2 class="search-title">
+            어떤 신발을 찾으세요?
+        </h2>
+
 
         <input
             class="search-input"
             id="searchInput"
-            placeholder="예: Nike, 러닝, 스니커즈..."
+            type="text"
+            placeholder="브랜드, 제품명 또는 카테고리를 검색하세요"
             oninput="searchProducts()">
 
-        <div class="select-row">
 
-            <select id="brandSelect"
-                    onchange="searchProducts()">
+        <div class="search-selects">
 
-                <option value="">모든 브랜드</option>
-                <option>Nike</option>
-                <option>Adidas</option>
-                <option>Puma</option>
-                <option>New Balance</option>
-                <option>Vans</option>
-                <option>Converse</option>
+            <select
+                id="brandSelect"
+                onchange="searchProducts()">
+
+                <option value="">
+                    모든 브랜드
+                </option>
+
+                <option value="Nike">
+                    Nike
+                </option>
+
+                <option value="Adidas">
+                    Adidas
+                </option>
+
+                <option value="Puma">
+                    Puma
+                </option>
+
+                <option value="New Balance">
+                    New Balance
+                </option>
+
+                <option value="Vans">
+                    Vans
+                </option>
+
+                <option value="Converse">
+                    Converse
+                </option>
 
             </select>
 
 
-            <select id="categorySelect"
-                    onchange="searchProducts()">
+            <select
+                id="categorySelect"
+                onchange="searchProducts()">
 
-                <option value="">모든 카테고리</option>
-                <option>러닝</option>
-                <option>스니커즈</option>
-                <option>농구</option>
-                <option>트레이닝</option>
-                <option>라이프스타일</option>
+                <option value="">
+                    모든 카테고리
+                </option>
+
+                <option value="러닝">
+                    러닝
+                </option>
+
+                <option value="스니커즈">
+                    스니커즈
+                </option>
+
+                <option value="농구">
+                    농구
+                </option>
+
+                <option value="트레이닝">
+                    트레이닝
+                </option>
+
+                <option value="라이프스타일">
+                    라이프스타일
+                </option>
 
             </select>
 
         </div>
+
 
         <div
             class="search-results"
@@ -1191,100 +2198,146 @@ select{
 </div>
 
 
-<!-- PRODUCT DETAIL -->
+<!-- =====================================================
+     PRODUCT DETAIL MODAL
+===================================================== -->
 
-<div class="modal" id="detailModal">
+<div
+    class="modal"
+    id="detailModal">
 
     <div class="modal-content">
 
-        <button class="close"
-                onclick="closeDetail()">
+        <button
+            class="close"
+            onclick="closeDetail()">
             ×
         </button>
 
+
         <div class="detail">
 
+
             <div class="detail-image">
-                <img id="detailImage">
+
+                <img
+                    id="detailImage"
+                    src=""
+                    alt="product">
+
             </div>
 
-            <div>
+
+            <div class="detail-info">
 
                 <div
-                    id="detailBrand"
-                    class="product-brand">
+                    class="detail-brand"
+                    id="detailBrand">
                 </div>
 
-                <h2 id="detailName"></h2>
+
+                <h2
+                    class="detail-name"
+                    id="detailName">
+                </h2>
+
 
                 <div
-                    id="detailPrice"
-                    class="detail-price">
+                    class="detail-price"
+                    id="detailPrice">
                 </div>
 
-                <p>
-                    편안한 착화감과 세련된 디자인을
-                    동시에 경험할 수 있는 인기 상품입니다.
+
+                <p class="detail-description">
+
+                    일상과 특별한 순간 모두를 위한
+                    세련된 디자인과 편안한 착화감을
+                    갖춘 SOLEX 추천 상품입니다.
+
                 </p>
 
+
                 <div class="size-title">
-                    사이즈 선택
+                    SIZE
                 </div>
+
 
                 <div class="sizes">
 
-                    <button class="size"
-                            onclick="selectSize(this)">
+                    <button
+                        class="size"
+                        onclick="selectSize(this)">
                         230
                     </button>
 
-                    <button class="size"
-                            onclick="selectSize(this)">
+                    <button
+                        class="size"
+                        onclick="selectSize(this)">
                         235
                     </button>
 
-                    <button class="size"
-                            onclick="selectSize(this)">
+                    <button
+                        class="size"
+                        onclick="selectSize(this)">
                         240
                     </button>
 
-                    <button class="size"
-                            onclick="selectSize(this)">
+                    <button
+                        class="size"
+                        onclick="selectSize(this)">
                         245
                     </button>
 
-                    <button class="size"
-                            onclick="selectSize(this)">
+                    <button
+                        class="size"
+                        onclick="selectSize(this)">
                         250
                     </button>
 
-                    <button class="size"
-                            onclick="selectSize(this)">
+                    <button
+                        class="size"
+                        onclick="selectSize(this)">
                         255
                     </button>
 
-                    <button class="size"
-                            onclick="selectSize(this)">
+                    <button
+                        class="size"
+                        onclick="selectSize(this)">
                         260
                     </button>
 
-                    <button class="size"
-                            onclick="selectSize(this)">
+                    <button
+                        class="size"
+                        onclick="selectSize(this)">
                         265
                     </button>
 
-                    <button class="size"
-                            onclick="selectSize(this)">
+                    <button
+                        class="size"
+                        onclick="selectSize(this)">
                         270
                     </button>
 
+                    <button
+                        class="size"
+                        onclick="selectSize(this)">
+                        275
+                    </button>
+
+                    <button
+                        class="size"
+                        onclick="selectSize(this)">
+                        280
+                    </button>
+
                 </div>
+
 
                 <button
                     class="add-cart"
                     onclick="addCart()">
 
-                    장바구니에 담기
+                    ADD TO BAG&nbsp;&nbsp; →
 
                 </button>
 
@@ -1299,140 +2352,192 @@ select{
 
 <script>
 
-/* ================= PRODUCTS ================= */
+/* =====================================================
+   PRODUCT DATA
+===================================================== */
 
 const products = [
 
-{
-id:1,
-brand:"Nike",
-name:"Air Force 1 '07",
-category:"라이프스타일",
-price:149000,
-tag:"BEST",
-image:"https://stirlingsports.co.nz/cdn/shop/files/CW2288-111-2.jpg?v=1731548921&width=1320"
-},
+    {
+        id:1,
+        brand:"Nike",
+        name:"Air Force 1 '07",
+        category:"라이프스타일",
+        price:149000,
+        tag:"BEST",
+        image:"https://stirlingsports.co.nz/cdn/shop/files/CW2288-111-2.jpg?v=1731548921&width=1320"
+    },
 
-{
-id:2,
-brand:"Adidas",
-name:"Superstar",
-category:"스니커즈",
-price:90000,
-tag:"BEST",
-image:"https://8f08a8-ss.akinoncloudcdn.com/products/2024/06/28/30764459/f6594337-5215-486d-8294-f320deb1dbd6_size3840_cropCenter.jpg"
-},
+    {
+        id:2,
+        brand:"Adidas",
+        name:"Superstar",
+        category:"스니커즈",
+        price:90000,
+        tag:"BEST",
+        image:"https://8f08a8-ss.akinoncloudcdn.com/products/2024/06/28/30764459/f6594337-5215-486d-8294-f320deb1dbd6_size3840_cropCenter.jpg"
+    },
 
-{
-id:3,
-brand:"Puma",
-name:"Suede Classic",
-category:"라이프스타일",
-price:109000,
-tag:"NEW",
-image:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/381410/01/sv01/fnd/PNA/fmt/png"
-},
+    {
+        id:3,
+        brand:"Puma",
+        name:"Suede Classic",
+        category:"라이프스타일",
+        price:109000,
+        tag:"NEW",
+        image:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/381410/01/sv01/fnd/PNA/fmt/png"
+    },
 
-{
-id:4,
-brand:"New Balance",
-name:"530",
-category:"러닝",
-price:120000,
-tag:"BEST",
-image:"https://www.journeys.com/cdn/shop/files/401927_100_1.jpg"
-},
+    {
+        id:4,
+        brand:"New Balance",
+        name:"530",
+        category:"러닝",
+        price:120000,
+        tag:"BEST",
+        image:"https://www.journeys.com/cdn/shop/files/401927_100_1.jpg"
+    },
 
-{
-id:5,
-brand:"Vans",
-name:"Old Skool",
-category:"라이프스타일",
-price:70000,
-tag:"SALE",
-image:"https://bluetilelounge.com/cdn/shop/files/Vans-Old-Skool-Black-White-right.jpg?v=1732224601"
-},
+    {
+        id:5,
+        brand:"Vans",
+        name:"Old Skool",
+        category:"라이프스타일",
+        price:70000,
+        tag:"SALE",
+        image:"https://bluetilelounge.com/cdn/shop/files/Vans-Old-Skool-Black-White-right.jpg?v=1732224601"
+    },
 
-{
-id:6,
-brand:"Converse",
-name:"Chuck Taylor All Star",
-category:"스니커즈",
-price:69000,
-tag:"NEW",
-image:"https://www.converse.my/media/catalog/product/0/8/0885-CONM7650COPT013-1.jpg"
-},
+    {
+        id:6,
+        brand:"Converse",
+        name:"Chuck Taylor All Star",
+        category:"스니커즈",
+        price:69000,
+        tag:"NEW",
+        image:"https://www.converse.my/media/catalog/product/0/8/0885-CONM7650COPT013-1.jpg"
+    },
 
-{
-id:7,
-brand:"Nike",
-name:"Running Pro",
-category:"러닝",
-price:129000,
-tag:"NEW",
-image:"https://stirlingsports.co.nz/cdn/shop/files/CW2288-111-2.jpg?v=1731548921&width=1320"
-},
+    {
+        id:7,
+        brand:"Nike",
+        name:"Running Pro",
+        category:"러닝",
+        price:129000,
+        tag:"NEW",
+        image:"https://stirlingsports.co.nz/cdn/shop/files/CW2288-111-2.jpg?v=1731548921&width=1320"
+    },
 
-{
-id:8,
-brand:"Adidas",
-name:"Training X",
-category:"트레이닝",
-price:105000,
-tag:"NEW",
-image:"https://8f08a8-ss.akinoncloudcdn.com/products/2024/06/28/30764459/f6594337-5215-486d-8294-f320deb1dbd6_size3840_cropCenter.jpg"
-}
+    {
+        id:8,
+        brand:"Adidas",
+        name:"Training X",
+        category:"트레이닝",
+        price:105000,
+        tag:"NEW",
+        image:"https://8f08a8-ss.akinoncloudcdn.com/products/2024/06/28/30764459/f6594337-5215-486d-8294-f320deb1dbd6_size3840_cropCenter.jpg"
+    },
+
+    {
+        id:9,
+        brand:"Nike",
+        name:"Jordan Basketball Max",
+        category:"농구",
+        price:155000,
+        tag:"BEST",
+        image:"https://stirlingsports.co.nz/cdn/shop/files/CW2288-111-2.jpg?v=1731548921&width=1320"
+    },
+
+    {
+        id:10,
+        brand:"Vans",
+        name:"Classic Sneaker",
+        category:"스니커즈",
+        price:75000,
+        tag:"SALE",
+        image:"https://bluetilelounge.com/cdn/shop/files/Vans-Old-Skool-Black-White-right.jpg?v=1732224601"
+    }
 
 ];
 
 
-/* ================= RENDER ================= */
+/* =====================================================
+   RENDER PRODUCTS
+===================================================== */
 
-function render(list){
+function renderProducts(list){
 
     const grid =
         document.getElementById("productGrid");
 
     grid.innerHTML = "";
 
+
+    if(list.length === 0){
+
+        grid.innerHTML = `
+            <p style="
+                grid-column:1/-1;
+                padding:60px 0;
+                text-align:center;
+                color:#777;
+            ">
+                상품이 없습니다.
+            </p>
+        `;
+
+        return;
+    }
+
+
     list.forEach(product => {
 
         grid.innerHTML += `
 
-        <div class="product"
-             onclick="openDetail(${product.id})">
+            <div
+                class="product"
+                onclick="openDetail(${product.id})">
 
-            <div class="product-image">
 
-                <span class="tag">
-                    ${product.tag}
-                </span>
+                <div class="product-image">
 
-                <img
-                    src="${product.image}"
-                    alt="${product.name}"
-                    onerror="this.style.display='none'"
-                >
+                    <div class="product-tag">
+                        ${product.tag}
+                    </div>
+
+
+                    <div
+                        class="product-wishlist"
+                        onclick="event.stopPropagation(); wishlist()">
+                        ♡
+                    </div>
+
+
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}"
+                        onerror="this.style.opacity='0'">
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <div class="product-brand">
+                        ${product.brand}
+                    </div>
+
+                    <div class="product-name">
+                        ${product.name}
+                    </div>
+
+                    <div class="product-price">
+                        ${product.price.toLocaleString()}원
+                    </div>
+
+                </div>
 
             </div>
-
-            <div class="product-info">
-
-                <div class="product-brand">
-                    ${product.brand}
-                </div>
-
-                <div class="product-name">
-                    ${product.name}
-                </div>
-
-                <div class="price">
-                    ${product.price.toLocaleString()}원
-                </div>
-
-            </div>
-
-        </div>
 
         `;
 
@@ -1441,30 +2546,36 @@ function render(list){
 }
 
 
-/* ================= SHOW ALL ================= */
+/* =====================================================
+   SHOW ALL
+===================================================== */
 
 function showAll(){
 
-    render(products);
+    renderProducts(products);
 
     document
         .getElementById("products")
         .scrollIntoView({
             behavior:"smooth"
         });
+
 }
 
 
-/* ================= CATEGORY ================= */
+/* =====================================================
+   CATEGORY FILTER
+===================================================== */
 
 function categoryFilter(category){
 
     const result =
         products.filter(
-            p => p.category === category
+            product =>
+            product.category === category
         );
 
-    render(result);
+    renderProducts(result);
 
     document
         .getElementById("products")
@@ -1475,16 +2586,19 @@ function categoryFilter(category){
 }
 
 
-/* ================= BRAND ================= */
+/* =====================================================
+   BRAND FILTER
+===================================================== */
 
 function brandFilter(brand){
 
     const result =
         products.filter(
-            p => p.brand === brand
+            product =>
+            product.brand === brand
         );
 
-    render(result);
+    renderProducts(result);
 
     document
         .getElementById("products")
@@ -1495,7 +2609,9 @@ function brandFilter(brand){
 }
 
 
-/* ================= SEARCH ================= */
+/* =====================================================
+   SEARCH MODAL
+===================================================== */
 
 function openSearch(){
 
@@ -1517,39 +2633,64 @@ function closeSearch(){
 }
 
 
+/* =====================================================
+   SEARCH FUNCTION
+===================================================== */
+
 function searchProducts(){
 
     const keyword =
         document
-        .getElementById("searchInput")
-        .value
-        .toLowerCase();
+            .getElementById("searchInput")
+            .value
+            .toLowerCase()
+            .trim();
+
 
     const brand =
         document
-        .getElementById("brandSelect")
-        .value;
+            .getElementById("brandSelect")
+            .value;
+
 
     const category =
         document
-        .getElementById("categorySelect")
-        .value;
+            .getElementById("categorySelect")
+            .value;
 
 
     const result =
-        products.filter(p => {
+        products.filter(product => {
 
-            const text =
-                (
-                    p.name +
-                    p.brand +
-                    p.category
-                ).toLowerCase();
+            const searchText = (
+
+                product.name +
+                " " +
+                product.brand +
+                " " +
+                product.category
+
+            ).toLowerCase();
+
 
             return (
-                text.includes(keyword) &&
-                (!brand || p.brand === brand) &&
-                (!category || p.category === category)
+
+                searchText.includes(keyword)
+
+                &&
+
+                (
+                    !brand ||
+                    product.brand === brand
+                )
+
+                &&
+
+                (
+                    !category ||
+                    product.category === category
+                )
+
             );
 
         });
@@ -1558,15 +2699,24 @@ function searchProducts(){
     const box =
         document.getElementById("searchResults");
 
-    box.innerHTML="";
+    box.innerHTML = "";
 
 
     if(result.length === 0){
 
-        box.innerHTML=`
-            <p>
+        box.innerHTML = `
+
+            <div style="
+                grid-column:1/-1;
+                padding:50px 0;
+                text-align:center;
+                color:#777;
+            ">
+
                 검색 결과가 없습니다.
-            </p>
+
+            </div>
+
         `;
 
         return;
@@ -1577,27 +2727,28 @@ function searchProducts(){
 
         box.innerHTML += `
 
-        <div class="result"
-             onclick="openDetail(${product.id})">
+            <div
+                class="search-result"
+                onclick="openDetail(${product.id})">
 
-            <img
-                src="${product.image}"
-                onerror="this.style.display='none'"
-            >
+                <img
+                    src="${product.image}"
+                    alt="${product.name}"
+                    onerror="this.style.opacity='0'">
 
-            <div class="product-brand">
-                ${product.brand}
+                <div class="product-brand">
+                    ${product.brand}
+                </div>
+
+                <div class="search-result-name">
+                    ${product.name}
+                </div>
+
+                <div class="search-result-price">
+                    ${product.price.toLocaleString()}원
+                </div>
+
             </div>
-
-            <strong>
-                ${product.name}
-            </strong>
-
-            <p>
-                ${product.price.toLocaleString()}원
-            </p>
-
-        </div>
 
         `;
 
@@ -1606,32 +2757,45 @@ function searchProducts(){
 }
 
 
-/* ================= DETAIL ================= */
+/* =====================================================
+   PRODUCT DETAIL
+===================================================== */
 
 let currentProduct = null;
+
 
 function openDetail(id){
 
     currentProduct =
-        products.find(p => p.id === id);
+        products.find(
+            product =>
+            product.id === id
+        );
+
 
     document
         .getElementById("detailImage")
         .src = currentProduct.image;
 
+
     document
         .getElementById("detailBrand")
-        .innerText = currentProduct.brand;
+        .innerText =
+        currentProduct.brand;
+
 
     document
         .getElementById("detailName")
-        .innerText = currentProduct.name;
+        .innerText =
+        currentProduct.name;
+
 
     document
         .getElementById("detailPrice")
         .innerText =
         currentProduct.price.toLocaleString()
         + "원";
+
 
     document
         .getElementById("detailModal")
@@ -1649,52 +2813,171 @@ function closeDetail(){
 }
 
 
-/* ================= SIZE ================= */
+/* =====================================================
+   SIZE
+===================================================== */
 
 function selectSize(button){
 
     document
         .querySelectorAll(".size")
         .forEach(
-            b => b.classList.remove("selected")
+            item =>
+            item.classList.remove("selected")
         );
+
 
     button.classList.add("selected");
 
 }
 
 
-/* ================= CART ================= */
+/* =====================================================
+   CART
+===================================================== */
 
 let cartCount = 0;
 
+
 function addCart(){
+
+    if(!currentProduct){
+        return;
+    }
+
+
+    const selectedSize =
+        document.querySelector(
+            ".size.selected"
+        );
+
+
+    if(!selectedSize){
+
+        alert("사이즈를 선택해주세요.");
+
+        return;
+
+    }
+
 
     cartCount++;
 
+
     document
         .getElementById("cartCount")
-        .innerText = cartCount;
+        .innerText =
+        cartCount;
+
 
     alert(
-        currentProduct.name +
-        " 상품이 장바구니에 담겼습니다."
+
+        currentProduct.name
+        +
+        " / "
+        +
+        selectedSize.innerText
+        +
+        " 사이즈가 장바구니에 담겼습니다."
+
     );
+
 
     closeDetail();
 
 }
 
 
-/* ================= SUBSCRIBE ================= */
+/* =====================================================
+   WISHLIST
+===================================================== */
 
-function subscribe(){
+function wishlist(){
 
     alert(
-        "뉴스레터 구독이 완료되었습니다!"
+        "위시리스트에 추가되었습니다."
     );
 
 }
+
+
+/* =====================================================
+   NEWSLETTER
+===================================================== */
+
+function subscribe(){
+
+    const email =
+        document
+            .getElementById("email")
+            .value
+            .trim();
+
+
+    if(!email){
+
+        alert(
+            "이메일 주소를 입력해주세요."
+        );
+
+        return;
+
+    }
+
+
+    alert(
+        "SOLEX 뉴스레터 구독이 완료되었습니다."
+    );
+
+
+    document
+        .getElementById("email")
+        .value="";
+
+}
+
+
+/* =====================================================
+   CLOSE MODALS WHEN CLICK OUTSIDE
+===================================================== */
+
+window.addEventListener(
+    "click",
+    function(event){
+
+        const search =
+            document.getElementById(
+                "searchModal"
+            );
+
+        const detail =
+            document.getElementById(
+                "detailModal"
+            );
+
+
+        if(event.target === search){
+
+            closeSearch();
+
+        }
+
+
+        if(event.target === detail){
+
+            closeDetail();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   INITIAL LOAD
+===================================================== */
+
+renderProducts(products);
 
 </script>
 
