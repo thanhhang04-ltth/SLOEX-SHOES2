@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SOLEX | 새로운 신발로 더 멋진 하루</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, "Noto Sans KR", sans-serif;
+    color:#111;
+    background:#fff;
+}
+
+button{
+    font-family:inherit;
+    cursor:pointer;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* ================= HEADER ================= */
+
+.top-bar{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:10px;
+    font-size:13px;
+}
+
+.header{
+    height:80px;
+    border-bottom:1px solid #eee;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 5%;
+    position:sticky;
+    top:0;
+    background:white;
+    z-index:100;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:900;
+    letter-spacing:-2px;
+}
+
+.nav{
+    display:flex;
+    gap:35px;
+    font-size:15px;
+    font-weight:600;
+}
+
+.nav a:hover{
+    color:#777;
+}
+
+.header-icons{
+    display:flex;
+    gap:12px;
+}
+
+.icon-btn{
+    border:0;
+    background:white;
+    font-size:21px;
+    position:relative;
+}
+
+.cart-count{
+    position:absolute;
+    top:-7px;
+    right:-7px;
+    background:#111;
+    color:white;
+    width:17px;
+    height:17px;
+    border-radius:50%;
+    font-size:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:650px;
+    background:#f3f3f3;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:70px 8%;
+    overflow:hidden;
+}
+
+.hero-text{
+    width:48%;
+}
+
+.hero-small{
+    font-size:13px;
+    letter-spacing:3px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:64px;
+    line-height:1.08;
+    letter-spacing:-4px;
+    margin-bottom:25px;
+}
+
+.hero p{
+    font-size:17px;
+    line-height:1.8;
+    color:#555;
+    margin-bottom:35px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+}
+
+.btn-black{
+    background:#111;
+    color:white;
+    padding:16px 28px;
+    border:1px solid #111;
+    border-radius:3px;
+    font-weight:bold;
+}
+
+.btn-white{
+    background:white;
+    color:#111;
+    padding:16px 28px;
+    border:1px solid #111;
+    border-radius:3px;
+    font-weight:bold;
+}
+
+.btn-black:hover{
+    background:#333;
+}
+
+.btn-white:hover{
+    background:#eee;
+}
+
+.hero-image{
+    width:48%;
+    display:flex;
+    justify-content:center;
+}
+
+.hero-image img{
+    width:100%;
+    max-width:560px;
+    object-fit:contain;
+    mix-blend-mode:multiply;
+}
+
+/* ================= BENEFITS ================= */
+
+.benefits{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border-bottom:1px solid #eee;
+}
+
+.benefit{
+    padding:28px;
+    text-align:center;
+    border-right:1px solid #eee;
+}
+
+.benefit:last-child{
+    border-right:0;
+}
+
+.benefit-icon{
+    font-size:25px;
+    margin-bottom:8px;
+}
+
+.benefit h3{
+    font-size:14px;
+    margin-bottom:5px;
+}
+
+.benefit p{
+    color:#777;
+    font-size:12px;
+}
+
+/* ================= SECTION ================= */
+
+.section{
+    padding:90px 7%;
+}
+
+.section-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:35px;
+}
+
+.section-title h2{
+    font-size:38px;
+    letter-spacing:-2px;
+}
+
+.section-title p{
+    color:#777;
+}
+
+/* ================= BRAND ================= */
+
+.brands{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    border-top:1px solid #eee;
+    border-left:1px solid #eee;
+}
+
+.brand{
+    height:130px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    font-weight:900;
+    border-right:1px solid #eee;
+    border-bottom:1px solid #eee;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.brand:hover{
+    background:#111;
+    color:white;
+}
+
+/* ================= CATEGORY ================= */
+
+.categories{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.category{
+    height:240px;
+    background:#f4f4f4;
+    padding:25px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.category:hover{
+    transform:translateY(-5px);
+    background:#e9e9e9;
+}
+
+.category-icon{
+    font-size:75px;
+    text-align:center;
+    margin-top:25px;
+}
+
+.category-name{
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* ================= FILTER ================= */
+
+.filters{
+    display:flex;
+    gap:8px;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+}
+
+.filter-btn{
+    background:white;
+    border:1px solid #ddd;
+    padding:10px 18px;
+    border-radius:30px;
+}
+
+.filter-btn.active,
+.filter-btn:hover{
+    background:#111;
+    color:white;
+    border-color:#111;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.product{
+    cursor:pointer;
+}
+
+.product-image{
+    height:350px;
+    background:#f5f5f5;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.product-image img{
+    width:90%;
+    height:90%;
+    object-fit:contain;
+    mix-blend-mode:multiply;
+    transition:.4s;
+}
+
+.product:hover .product-image img{
+    transform:scale(1.08);
+}
+
+.tag{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:#111;
+    color:white;
+    padding:6px 10px;
+    font-size:11px;
+    z-index:2;
+}
+
+.product-info{
+    padding-top:15px;
+}
+
+.product-brand{
+    font-size:12px;
+    color:#777;
+    margin-bottom:6px;
+}
+
+.product-name{
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.price{
+    font-weight:bold;
+}
+
+/* ================= PROMO ================= */
+
+.promo{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.promo-card{
+    min-height:330px;
+    padding:45px;
+    background:#111;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.promo-card.light{
+    background:#eee;
+    color:#111;
+}
+
+.promo-card h2{
+    font-size:38px;
+    letter-spacing:-2px;
+    margin-bottom:15px;
+}
+
+.promo-card p{
+    line-height:1.7;
+    color:#aaa;
+}
+
+.promo-card.light p{
+    color:#666;
+}
+
+/* ================= NEWSLETTER ================= */
+
+.newsletter{
+    background:#f3f3f3;
+    padding:80px 20px;
+    text-align:center;
+}
+
+.newsletter h2{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.newsletter p{
+    color:#666;
+    margin-bottom:25px;
+}
+
+.email-box{
+    display:flex;
+    max-width:500px;
+    margin:auto;
+}
+
+.email-box input{
+    flex:1;
+    padding:16px;
+    border:1px solid #ccc;
+}
+
+.email-box button{
+    background:#111;
+    color:white;
+    border:0;
+    padding:0 25px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    background:#111;
+    color:white;
+    padding:60px 7%;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer h3{
+    margin-bottom:20px;
+}
+
+.footer p,
+.footer li{
+    color:#aaa;
+    font-size:13px;
+    line-height:2;
+}
+
+.footer ul{
+    list-style:none;
+}
+
+.copyright{
+    border-top:1px solid #333;
+    margin-top:50px;
+    padding-top:20px;
+    color:#777;
+    font-size:12px;
+}
+
+/* ================= MODAL ================= */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    z-index:1000;
+    align-items:center;
+    justify-content:center;
+}
+
+.modal-content{
+    background:white;
+    width:min(900px,92%);
+    max-height:90vh;
+    overflow:auto;
+    padding:35px;
+    position:relative;
+}
+
+.close{
+    position:absolute;
+    top:15px;
+    right:20px;
+    font-size:28px;
+    border:0;
+    background:none;
+}
+
+.search-title{
+    font-size:30px;
+    margin-bottom:25px;
+}
+
+.search-input{
+    width:100%;
+    padding:17px;
+    border:1px solid #ccc;
+    margin-bottom:20px;
+    font-size:16px;
+}
+
+.select-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+select{
+    padding:14px;
+    border:1px solid #ccc;
+}
+
+.search-results{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.result{
+    background:#f5f5f5;
+    padding:15px;
+    cursor:pointer;
+}
+
+.result img{
+    width:100%;
+    height:180px;
+    object-fit:contain;
+    mix-blend-mode:multiply;
+}
+
+/* ================= DETAIL ================= */
+
+.detail{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:35px;
+}
+
+.detail-image{
+    background:#f5f5f5;
+    height:450px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.detail-image img{
+    width:90%;
+    height:90%;
+    object-fit:contain;
+    mix-blend-mode:multiply;
+}
+
+.detail h2{
+    font-size:32px;
+    margin:15px 0;
+}
+
+.detail-price{
+    font-size:22px;
+    font-weight:bold;
+    margin:20px 0;
+}
+
+.size-title{
+    margin:20px 0 10px;
+    font-weight:bold;
+}
+
+.sizes{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+.size{
+    border:1px solid #ccc;
+    background:white;
+    padding:12px 18px;
+}
+
+.size:hover,
+.size.selected{
+    background:#111;
+    color:white;
+}
+
+.add-cart{
+    margin-top:25px;
+    width:100%;
+    padding:17px;
+    background:#111;
+    color:white;
+    border:0;
+    font-weight:bold;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    .nav{
+        display:none;
+    }
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding:60px 5%;
+    }
+
+    .hero-text,
+    .hero-image{
+        width:100%;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .hero-image{
+        margin-top:40px;
+    }
+
+    .benefits{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .brands{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .section{
+        padding:60px 5%;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .categories,
+    .products,
+    .promo{
+        grid-template-columns:1fr;
+    }
+
+    .brands{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .search-results{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .detail{
+        grid-template-columns:1fr;
+    }
+
+    .select-row{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    신규 회원 가입 시 10% 할인 쿠폰 · 50,000원 이상 무료 배송
+</div>
+
+<!-- HEADER -->
+<header class="header">
+
+    <div class="logo">SOLEX</div>
+
+    <nav class="nav">
+        <a href="#new">신상품</a>
+        <a href="#products">남성</a>
+        <a href="#products">여성</a>
+        <a href="#categories">키즈</a>
+        <a href="#brands">브랜드</a>
+        <a href="#sale">세일</a>
+    </nav>
+
+    <div class="header-icons">
+
+        <button class="icon-btn" onclick="openSearch()">
+            🔍
+        </button>
+
+        <button class="icon-btn">
+            ♡
+        </button>
+
+        <button class="icon-btn">
+            🛒
+            <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <div class="hero-small">
+            SOLEX NEW COLLECTION
+        </div>
+
+        <h1>
+            새로운 신발로<br>
+            더 멋진 하루를<br>
+            시작하세요! 👟
+        </h1>
+
+        <p>
+            당신의 스타일과 일상에 가장 잘 어울리는
+            새로운 스니커즈를 만나보세요.
+            편안함과 스타일을 동시에 경험할 수 있습니다.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="btn-black"
+                    onclick="openSearch()">
+                신발 검색하기 →
+            </button>
+
+            <button class="btn-white"
+                    onclick="showAll()">
+                인기 상품 보기
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="hero-image">
+
+        <img
+        src="https://stirlingsports.co.nz/cdn/shop/files/CW2288-111-2.jpg?v=1731548921&width=1320"
+        alt="Nike Air Force 1">
+
+    </div>
+
+</section>
+
+
+<!-- BENEFITS -->
+
+<section class="benefits">
+
+    <div class="benefit">
+        <div class="benefit-icon">🚚</div>
+        <h3>무료 배송</h3>
+        <p>5만원 이상 구매 시</p>
+    </div>
+
+    <div class="benefit">
+        <div class="benefit-icon">↩️</div>
+        <h3>간편한 교환</h3>
+        <p>편리하고 빠른 교환</p>
+    </div>
+
+    <div class="benefit">
+        <div class="benefit-icon">🔒</div>
+        <h3>안전한 결제</h3>
+        <p>안전한 결제 시스템</p>
+    </div>
+
+    <div class="benefit">
+        <div class="benefit-icon">💬</div>
+        <h3>고객 지원</h3>
+        <p>언제든지 문의하세요</p>
+    </div>
+
+</section>
+
+
+<!-- BRANDS -->
+
+<section class="section" id="brands">
+
+    <div class="section-title">
+
+        <div>
+            <h2>인기 브랜드</h2>
+            <p>좋아하는 브랜드의 신상품을 만나보세요.</p>
+        </div>
+
+    </div>
+
+    <div class="brands">
+
+        <div class="brand" onclick="brandFilter('Nike')">
+            NIKE
+        </div>
+
+        <div class="brand" onclick="brandFilter('Adidas')">
+            ADIDAS
+        </div>
+
+        <div class="brand" onclick="brandFilter('Puma')">
+            PUMA
+        </div>
+
+        <div class="brand" onclick="brandFilter('New Balance')">
+            NEW BALANCE
+        </div>
+
+        <div class="brand" onclick="brandFilter('Vans')">
+            VANS
+        </div>
+
+        <div class="brand" onclick="brandFilter('Converse')">
+            CONVERSE
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+
+<section class="section" id="categories">
+
+    <div class="section-title">
+
+        <div>
+            <h2>카테고리</h2>
+            <p>원하는 스타일의 신발을 선택하세요.</p>
+        </div>
+
+    </div>
+
+    <div class="categories">
+
+        <div class="category"
+             onclick="categoryFilter('러닝')">
+
+            <div class="category-icon">🏃‍♂️</div>
+            <div class="category-name">
+                러닝
+            </div>
+
+        </div>
+
+        <div class="category"
+             onclick="categoryFilter('스니커즈')">
+
+            <div class="category-icon">👟</div>
+            <div class="category-name">
+                스니커즈
+            </div>
+
+        </div>
+
+        <div class="category"
+             onclick="categoryFilter('농구')">
+
+            <div class="category-icon">🏀</div>
+            <div class="category-name">
+                농구화
+            </div>
+
+        </div>
+
+        <div class="category"
+             onclick="categoryFilter('트레이닝')">
+
+            <div class="category-icon">🏋️</div>
+            <div class="category-name">
+                트레이닝
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section class="section" id="products">
+
+    <div class="section-title">
+
+        <div>
+            <h2>베스트 상품</h2>
+            <p>SOLEX에서 가장 인기 있는 제품입니다.</p>
+        </div>
+
+    </div>
+
+
+    <div class="filters">
+
+        <button class="filter-btn active"
+                onclick="showAll(this)">
+            전체
+        </button>
+
+        <button class="filter-btn"
+                onclick="categoryFilter('러닝',this)">
+            러닝
+        </button>
+
+        <button class="filter-btn"
+                onclick="categoryFilter('스니커즈',this)">
+            스니커즈
+        </button>
+
+        <button class="filter-btn"
+                onclick="categoryFilter('농구',this)">
+            농구
+        </button>
+
+        <button class="filter-btn"
+                onclick="categoryFilter('트레이닝',this)">
+            트레이닝
+        </button>
+
+    </div>
+
+
+    <div class="products" id="productGrid"></div>
+
+</section>
+
+
+<!-- PROMO -->
+
+<section class="section">
+
+    <div class="promo">
+
+        <div class="promo-card">
+
+            <h2>
+                YOUR<br>
+                EVERYDAY<br>
+                STYLE
+            </h2>
+
+            <p>
+                매일 신어도 편안하고
+                어디에서나 스타일리시한
+                SOLEX 스니커즈.
+            </p>
+
+        </div>
+
+
+        <div class="promo-card light">
+
+            <h2>
+                지금<br>
+                새로운 스타일을<br>
+                시작하세요.
+            </h2>
+
+            <p>
+                인기 상품은 빠르게 품절될 수 있습니다.
+                마음에 드는 신발을 지금 확인해보세요.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- NEWSLETTER -->
+
+<section class="newsletter">
+
+    <h2>SOLEX 소식 받기</h2>
+
+    <p>
+        신상품과 할인 정보를 가장 먼저 받아보세요.
+    </p>
+
+    <div class="email-box">
+
+        <input
+            type="email"
+            placeholder="이메일 주소를 입력하세요">
+
+        <button onclick="subscribe()">
+            구독하기
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-grid">
+
+        <div>
+            <h3>SOLEX</h3>
+
+            <p>
+                새로운 신발로 더 멋진 하루를
+                시작할 수 있도록 도와드립니다.
+            </p>
+        </div>
+
+        <div>
+            <h3>쇼핑</h3>
+
+            <ul>
+                <li>신상품</li>
+                <li>남성</li>
+                <li>여성</li>
+                <li>키즈</li>
+                <li>세일</li>
+            </ul>
+
+        </div>
+
+        <div>
+
+            <h3>고객센터</h3>
+
+            <ul>
+                <li>배송 안내</li>
+                <li>교환 / 반품</li>
+                <li>주문 조회</li>
+                <li>자주 묻는 질문</li>
+            </ul>
+
+        </div>
+
+        <div>
+
+            <h3>회사</h3>
+
+            <ul>
+                <li>브랜드 소개</li>
+                <li>매장 안내</li>
+                <li>채용</li>
+                <li>문의하기</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 SOLEX. All Rights Reserved.
+    </div>
+
+</footer>
+
+
+<!-- SEARCH MODAL -->
+
+<div class="modal" id="searchModal">
+
+    <div class="modal-content">
+
+        <button class="close"
+                onclick="closeSearch()">
+            ×
+        </button>
+
+        <div class="search-title">
+            원하는 신발을 찾아보세요
+        </div>
+
+        <input
+            class="search-input"
+            id="searchInput"
+            placeholder="예: Nike, 러닝, 스니커즈..."
+            oninput="searchProducts()">
+
+        <div class="select-row">
+
+            <select id="brandSelect"
+                    onchange="searchProducts()">
+
+                <option value="">모든 브랜드</option>
+                <option>Nike</option>
+                <option>Adidas</option>
+                <option>Puma</option>
+                <option>New Balance</option>
+                <option>Vans</option>
+                <option>Converse</option>
+
+            </select>
+
+
+            <select id="categorySelect"
+                    onchange="searchProducts()">
+
+                <option value="">모든 카테고리</option>
+                <option>러닝</option>
+                <option>스니커즈</option>
+                <option>농구</option>
+                <option>트레이닝</option>
+                <option>라이프스타일</option>
+
+            </select>
+
+        </div>
+
+        <div
+            class="search-results"
+            id="searchResults">
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- PRODUCT DETAIL -->
+
+<div class="modal" id="detailModal">
+
+    <div class="modal-content">
+
+        <button class="close"
+                onclick="closeDetail()">
+            ×
+        </button>
+
+        <div class="detail">
+
+            <div class="detail-image">
+                <img id="detailImage">
+            </div>
+
+            <div>
+
+                <div
+                    id="detailBrand"
+                    class="product-brand">
+                </div>
+
+                <h2 id="detailName"></h2>
+
+                <div
+                    id="detailPrice"
+                    class="detail-price">
+                </div>
+
+                <p>
+                    편안한 착화감과 세련된 디자인을
+                    동시에 경험할 수 있는 인기 상품입니다.
+                </p>
+
+                <div class="size-title">
+                    사이즈 선택
+                </div>
+
+                <div class="sizes">
+
+                    <button class="size"
+                            onclick="selectSize(this)">
+                        230
+                    </button>
+
+                    <button class="size"
+                            onclick="selectSize(this)">
+                        235
+                    </button>
+
+                    <button class="size"
+                            onclick="selectSize(this)">
+                        240
+                    </button>
+
+                    <button class="size"
+                            onclick="selectSize(this)">
+                        245
+                    </button>
+
+                    <button class="size"
+                            onclick="selectSize(this)">
+                        250
+                    </button>
+
+                    <button class="size"
+                            onclick="selectSize(this)">
+                        255
+                    </button>
+
+                    <button class="size"
+                            onclick="selectSize(this)">
+                        260
+                    </button>
+
+                    <button class="size"
+                            onclick="selectSize(this)">
+                        265
+                    </button>
+
+                    <button class="size"
+                            onclick="selectSize(this)">
+                        270
+                    </button>
+
+                </div>
+
+                <button
+                    class="add-cart"
+                    onclick="addCart()">
+
+                    장바구니에 담기
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* ================= PRODUCTS ================= */
+
+const products = [
+
+{
+id:1,
+brand:"Nike",
+name:"Air Force 1 '07",
+category:"라이프스타일",
+price:149000,
+tag:"BEST",
+image:"https://stirlingsports.co.nz/cdn/shop/files/CW2288-111-2.jpg?v=1731548921&width=1320"
+},
+
+{
+id:2,
+brand:"Adidas",
+name:"Superstar",
+category:"스니커즈",
+price:90000,
+tag:"BEST",
+image:"https://8f08a8-ss.akinoncloudcdn.com/products/2024/06/28/30764459/f6594337-5215-486d-8294-f320deb1dbd6_size3840_cropCenter.jpg"
+},
+
+{
+id:3,
+brand:"Puma",
+name:"Suede Classic",
+category:"라이프스타일",
+price:109000,
+tag:"NEW",
+image:"https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/381410/01/sv01/fnd/PNA/fmt/png"
+},
+
+{
+id:4,
+brand:"New Balance",
+name:"530",
+category:"러닝",
+price:120000,
+tag:"BEST",
+image:"https://www.journeys.com/cdn/shop/files/401927_100_1.jpg"
+},
+
+{
+id:5,
+brand:"Vans",
+name:"Old Skool",
+category:"라이프스타일",
+price:70000,
+tag:"SALE",
+image:"https://bluetilelounge.com/cdn/shop/files/Vans-Old-Skool-Black-White-right.jpg?v=1732224601"
+},
+
+{
+id:6,
+brand:"Converse",
+name:"Chuck Taylor All Star",
+category:"스니커즈",
+price:69000,
+tag:"NEW",
+image:"https://www.converse.my/media/catalog/product/0/8/0885-CONM7650COPT013-1.jpg"
+},
+
+{
+id:7,
+brand:"Nike",
+name:"Running Pro",
+category:"러닝",
+price:129000,
+tag:"NEW",
+image:"https://stirlingsports.co.nz/cdn/shop/files/CW2288-111-2.jpg?v=1731548921&width=1320"
+},
+
+{
+id:8,
+brand:"Adidas",
+name:"Training X",
+category:"트레이닝",
+price:105000,
+tag:"NEW",
+image:"https://8f08a8-ss.akinoncloudcdn.com/products/2024/06/28/30764459/f6594337-5215-486d-8294-f320deb1dbd6_size3840_cropCenter.jpg"
+}
+
+];
+
+
+/* ================= RENDER ================= */
+
+function render(list){
+
+    const grid =
+        document.getElementById("productGrid");
+
+    grid.innerHTML = "";
+
+    list.forEach(product => {
+
+        grid.innerHTML += `
+
+        <div class="product"
+             onclick="openDetail(${product.id})">
+
+            <div class="product-image">
+
+                <span class="tag">
+                    ${product.tag}
+                </span>
+
+                <img
+                    src="${product.image}"
+                    alt="${product.name}"
+                    onerror="this.style.display='none'"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-brand">
+                    ${product.brand}
+                </div>
+
+                <div class="product-name">
+                    ${product.name}
+                </div>
+
+                <div class="price">
+                    ${product.price.toLocaleString()}원
+                </div>
+
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+
+/* ================= SHOW ALL ================= */
+
+function showAll(){
+
+    render(products);
+
+    document
+        .getElementById("products")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+}
+
+
+/* ================= CATEGORY ================= */
+
+function categoryFilter(category){
+
+    const result =
+        products.filter(
+            p => p.category === category
+        );
+
+    render(result);
+
+    document
+        .getElementById("products")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+/* ================= BRAND ================= */
+
+function brandFilter(brand){
+
+    const result =
+        products.filter(
+            p => p.brand === brand
+        );
+
+    render(result);
+
+    document
+        .getElementById("products")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+/* ================= SEARCH ================= */
+
+function openSearch(){
+
+    document
+        .getElementById("searchModal")
+        .style.display="flex";
+
+    searchProducts();
+
+}
+
+
+function closeSearch(){
+
+    document
+        .getElementById("searchModal")
+        .style.display="none";
+
+}
+
+
+function searchProducts(){
+
+    const keyword =
+        document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    const brand =
+        document
+        .getElementById("brandSelect")
+        .value;
+
+    const category =
+        document
+        .getElementById("categorySelect")
+        .value;
+
+
+    const result =
+        products.filter(p => {
+
+            const text =
+                (
+                    p.name +
+                    p.brand +
+                    p.category
+                ).toLowerCase();
+
+            return (
+                text.includes(keyword) &&
+                (!brand || p.brand === brand) &&
+                (!category || p.category === category)
+            );
+
+        });
+
+
+    const box =
+        document.getElementById("searchResults");
+
+    box.innerHTML="";
+
+
+    if(result.length === 0){
+
+        box.innerHTML=`
+            <p>
+                검색 결과가 없습니다.
+            </p>
+        `;
+
+        return;
+    }
+
+
+    result.forEach(product => {
+
+        box.innerHTML += `
+
+        <div class="result"
+             onclick="openDetail(${product.id})">
+
+            <img
+                src="${product.image}"
+                onerror="this.style.display='none'"
+            >
+
+            <div class="product-brand">
+                ${product.brand}
+            </div>
+
+            <strong>
+                ${product.name}
+            </strong>
+
+            <p>
+                ${product.price.toLocaleString()}원
+            </p>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+
+/* ================= DETAIL ================= */
+
+let currentProduct = null;
+
+function openDetail(id){
+
+    currentProduct =
+        products.find(p => p.id === id);
+
+    document
+        .getElementById("detailImage")
+        .src = currentProduct.image;
+
+    document
+        .getElementById("detailBrand")
+        .innerText = currentProduct.brand;
+
+    document
+        .getElementById("detailName")
+        .innerText = currentProduct.name;
+
+    document
+        .getElementById("detailPrice")
+        .innerText =
+        currentProduct.price.toLocaleString()
+        + "원";
+
+    document
+        .getElementById("detailModal")
+        .style.display="flex";
+
+}
+
+
+function closeDetail(){
+
+    document
+        .getElementById("detailModal")
+        .style.display="none";
+
+}
+
+
+/* ================= SIZE ================= */
+
+function selectSize(button){
+
+    document
+        .querySelectorAll(".size")
+        .forEach(
+            b => b.classList.remove("selected")
+        );
+
+    button.classList.add("selected");
+
+}
+
+
+/* ================= CART ================= */
+
+let cartCount = 0;
+
+function addCart(){
+
+    cartCount++;
+
+    document
+        .getElementById("cartCount")
+        .innerText = cartCount;
+
+    alert(
+        currentProduct.name +
+        " 상품이 장바구니에 담겼습니다."
+    );
+
+    closeDetail();
+
+}
+
+
+/* ================= SUBSCRIBE ================= */
+
+function subscribe(){
+
+    alert(
+        "뉴스레터 구독이 완료되었습니다!"
+    );
+
+}
+
+</script>
+
+</body>
+</html>
